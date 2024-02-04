@@ -1,0 +1,23 @@
+.instagram {
+    margin-right: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: grey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: darkgray;
+}
+
+.body::-webkit-scrollbar {
+    display: none;
+}
