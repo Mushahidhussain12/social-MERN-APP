@@ -15,7 +15,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { chatAtom, selectedConversationAtom } from "../atoms/chatAtom";
 import { BiConversation } from "react-icons/bi";
 import { DivertUser } from "../atoms/DivertUser";
-import { SocketContextProvider, useSocket } from "../context/socketContext";
+import { SocketContextProvider, useSocket } from "../context/SocketContext";
 
 function ChatPage() {
   const [loadingSkeleton, setLoadingSkeleton] = useState(true);

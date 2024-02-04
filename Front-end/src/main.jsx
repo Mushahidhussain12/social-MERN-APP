@@ -6,7 +6,7 @@ import { ColorModeScript } from "@chakra-ui/react";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import { SocketContextProvider } from "./context/socketContext";
+import { SocketContextProvider } from "./context/SocketContext";
 
 const styles = {
   global: (props) => ({

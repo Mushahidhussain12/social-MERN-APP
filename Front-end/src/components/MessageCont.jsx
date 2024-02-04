@@ -16,7 +16,7 @@ import { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { selectedConversationAtom } from "../atoms/chatAtom";
 import { DivertUser } from "../atoms/DivertUser";
-import { useSocket } from "../context/socketContext";
+import { useSocket } from "../context/SocketContext";
 function MessageCont() {
   const currentUser = useRecoilValue(DivertUser);
   const [selectedConversation, setSelectedConversation] = useRecoilState(
