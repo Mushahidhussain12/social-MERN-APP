@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
   const user = useRecoilValue(DivertUser);
 
   useEffect(() => {
-    const socket = io("https://mern-back-7d3f.onrender.com", {
+    const socket = io("http://localhost:5000", {
       query: {
         userId: user?._id,
       },

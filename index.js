@@ -10,9 +10,19 @@ import MessageRoutes from "./routes/MessageRoutes.js";
 import { app, server } from "./socket/socket.js";
 dotenv.config();
 
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
+const __filename = fileURLToPath(
+    import.meta.url);
+const __dirname = dirname(__filename);
 
+// Assuming package.json is in the root directory
+const rootDir = join(__dirname, '.', '..'); // Go up two levels
 
+console.log(rootDir);
+
+// ...
 
 
 
@@ -57,7 +67,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/messages", MessageRoutes);
 
-app.use(express.static(path.join(__dirname, "./Front-end/dist")));
+app.use(express.static(path.join(__dirname, "/Front-end/dist")));
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "/Front-end", "dist", "index.html"));
