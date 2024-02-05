@@ -33,7 +33,6 @@ async function signupUser(req, res) {
             res.cookie("jwt", token, {
                 httpOnly: true,
                 maxAge: 15 * 24 * 60 * 1000,
-                sameSite: "strict",
             });
             res.status(201).json({
                 message: "user created successfully",
@@ -75,7 +74,7 @@ async function loginUser(req, res) {
         res.cookie("jwt", token, {
             httpOnly: true,
             maxAge: 15 * 24 * 60 * 1000,
-            sameSite: "strict",
+
         });
         res.status(200).json({
             message: "user logged in successfully",

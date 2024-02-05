@@ -4,10 +4,19 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { v2 as cloudinary } from "cloudinary";
 import userRoutes from "./routes/userRoutes.js";
+import path from 'path';
 import postRoutes from "./routes/postRoutes.js";
 import MessageRoutes from "./routes/MessageRoutes.js";
 import { app, server } from "./socket/socket.js";
 dotenv.config();
+
+const __dirname = path.resolve();
+
+// ...
+
+
+
+
 
 //limit of data that can be parsed is set to 50mb to avoid payload too large error
 
@@ -47,6 +56,13 @@ app.use("/api/users", userRoutes);
 //middleware to deal with post related requests
 app.use("/api/posts", postRoutes);
 app.use("/api/messages", MessageRoutes);
+
+app.use(express.static(path.join(__dirname, "../Front-end/dist")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../Front-end/dist", "index.html"));
+});
+
 server.listen(port, () => {
     console.log("The app is listening on port 5000");
 });
